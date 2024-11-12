@@ -2,6 +2,7 @@ import cors from "cors";
 import express, { Application, NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import globalErrorHandler from "./app/middleware/globalErrorHandler";
+import router from "./app/routes";
 
 const app: Application = express();
 
@@ -14,6 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req: Request, res: Response) => {
   res.send({ massage: "Library Management System API Is Running" });
 });
+
+app.use("/api", router);
 
 app.use(globalErrorHandler);
 
