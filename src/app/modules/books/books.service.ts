@@ -32,9 +32,19 @@ const updateBookByBookId = async (bookId: string, payload: Partial<Book>) => {
   return result;
 };
 
+const deleteBookByBookId = async (bookId: string) => {
+  const result = await prisma.book.delete({
+    where: {
+      bookId,
+    },
+  });
+  return result;
+};
+
 export const BooksService = {
   createBook,
   getAllBooks,
   getBookByBookId,
   updateBookByBookId,
+  deleteBookByBookId,
 };
