@@ -37,8 +37,21 @@ const getMemberByMemberId = catchAsync(async (req, res) => {
   });
 });
 
+const updateMemberByBookId = catchAsync(async (req, res) => {
+  const { memberId } = req.params;
+  const payload = req.body;
+  const result = await MembersService.updateMemberByBookId(memberId, payload);
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: "Member updated successfully",
+    data: result,
+  });
+});
+
 export const MembersController = {
   createMember,
   getAllMembers,
   getMemberByMemberId,
+  updateMemberByBookId,
 };

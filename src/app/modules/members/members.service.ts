@@ -22,8 +22,22 @@ const getMemberByMemberId = async (memberId: string) => {
   return result;
 };
 
+const updateMemberByBookId = async (
+  memberId: string,
+  payload: Partial<Member>,
+) => {
+  const result = await prisma.member.update({
+    where: {
+      memberId,
+    },
+    data: payload,
+  });
+  return result;
+};
+
 export const MembersService = {
   createMember,
   getAllMembers,
   getMemberByMemberId,
+  updateMemberByBookId,
 };
