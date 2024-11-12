@@ -9,6 +9,9 @@ const createBorrow = async (payload: BorrowRecord) => {
   return result;
 };
 
+const getOverdueBorrowList = async () => {};
+
 export const BorrowService = {
   createBorrow,
+  getOverdueBorrowList,
 };
