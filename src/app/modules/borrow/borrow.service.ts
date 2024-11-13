@@ -2,6 +2,17 @@ import { BorrowRecord } from "@prisma/client";
 import prisma from "../../../shared/prisma";
 
 const createBorrow = async (payload: BorrowRecord) => {
+  const { bookId, memberId } = payload;
+  await prisma.book.findUniqueOrThrow({
+    where: {
+      bookId,
+    },
+  });
+  await prisma.member.findUniqueOrThrow({
+    where: {
+      memberId,
+    },
+  });
   const result = await prisma.borrowRecord.create({
     data: payload,
   });
