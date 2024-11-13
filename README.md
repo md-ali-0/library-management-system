@@ -44,8 +44,8 @@ A backend API for a Library Management System, enabling CRUD operations for book
 1.  **Clone the Repository**
 
     ```bash
-    git clone [repository_url]
-    cd library-management
+    git clone https://github.com/md-ali-0/library-management-system
+    cd library-management-system
     ```
 
 2.  **Install Dependencies**
