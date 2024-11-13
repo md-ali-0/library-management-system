@@ -2,6 +2,10 @@
 
 A backend API for a Library Management System, enabling CRUD operations for books, members, and borrowing activities. Built using **Node.js**, **Express**, **Prisma ORM**, **PostgreSQL**, and **TypeScript**.
 
+## Live URL
+
+[Library Management System API Live URL](https://library-management-system-tan-eight.vercel.app/)
+
 ## Technology Stack & Packages
 
 -   **Node.js** - Backend runtime
@@ -15,40 +19,25 @@ A backend API for a Library Management System, enabling CRUD operations for book
 
 1. **Book CRUD Operations**
 
-    - `POST /api/books` - Create a new book
-    - `GET /api/books` - Retrieve all books
-    - `GET /api/books/:bookId` - Retrieve a specific book by ID
-    - `PUT /api/books/:bookId` - Update book information
-    - `DELETE /api/books/:bookId` - Delete a book
+    - `POST /api/books`
+    - `GET /api/books`
+    - `GET /api/books/:bookId`
+    - `PUT /api/books/:bookId`
+    - `DELETE /api/books/:bookId`
 
 2. **Member CRUD Operations**
 
-    - `POST /api/members` - Register a new library member
-    - `GET /api/members` - Retrieve all members
-    - `GET /api/members/:memberId` - Retrieve a specific member by ID
-    - `PUT /api/members/:memberId` - Update member details
-    - `DELETE /api/members/:memberId` - Delete a member
+    - `POST /api/members`
+    - `GET /api/members`
+    - `GET /api/members/:memberId`
+    - `PUT /api/members/:memberId`
+    - `DELETE /api/members/:memberId`
 
 3. **Borrow & Return Books**
-    - `POST /api/borrow` - Record a borrowed book
-    - `POST /api/return` - Return a borrowed book
-    - `GET /api/borrow/overdue` - List all overdue borrowed books
+    - `POST /api/borrow`
+    - `POST /api/return`
+    - `GET /api/borrow/overdue`
 
-### Error Handling
-
-Each endpoint follows a structured error response:
-
-```json
-{
-  "success": false,
-  "status": <HTTP_STATUS_CODE>,
-  "message": "<Error message>"
-}
-```
-
-### Overdue Book Calculation
-
-Books not returned within 14 days are marked as overdue.
 
 ## Setup Instructions
 
@@ -90,8 +79,3 @@ Books not returned within 14 days are marked as overdue.
 -   Overdue book reporting, with 14-day borrowing policy.
 -   Robust error handling for all endpoints.
 -   Known Issues/Bugs
--   [List any unresolved issues or bugs here, or remove this section if none]
-
-## Live URL
-
-[Insert live deployment URL here]
